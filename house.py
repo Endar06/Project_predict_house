@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 def house_predict():
     model = joblib.load('model_rumah.pkl')
 
-    st.title('🏠 ESTIMASI HARGA RUMAH')
+    st.title('🏠 ESTIMASI HARGA RUMAH DI BEJING')
     st.image("https://chandu85.github.io/data-science/images/house-price.jpeg", width=150)
 
     col1, col2 = st.columns(2)
