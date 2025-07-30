@@ -1,18 +1,10 @@
 import streamlit as st
 import joblib
 import numpy as np
-import os
-import gdown
 from streamlit_option_menu import option_menu
 
 def house_predict():
-    # Cek apakah file model sudah ada, kalau belum download
-    model_path = 'model_rumah.pkl'
-    if not os.path.exists(model_path):
-        file_id = '1gjlr1a9JOdwGgHoWctxZ5lrtkhijgYhH'
-        gdown.download(f'https://drive.google.com/uc?id={file_id}', model_path, quiet=False)
-
-    model = joblib.load(model_path)
+    model = joblib.load('model_rumah.pkl')
 
     st.title('🏠 ESTIMASI HARGA RUMAH')
     st.image("https://chandu85.github.io/data-science/images/house-price.jpeg", width=150)
@@ -25,6 +17,7 @@ def house_predict():
         square = st.number_input("Luas rumah (m²)", min_value=10.0, max_value=1000.0, value=80.0)
         constructionTime = st.slider("Tahun Bangun", 1950, 2025, 2005)
 
+        # Ganti: renovasiCondition jadi selectbox
         renov_input = st.selectbox(
             "Pilih Kondisi Renovasi:",
             ["Renovasi ringan", "Renovasi sedang", "Renovasi berat", "Renovasi keseluruhan"]
@@ -63,4 +56,3 @@ def house_predict():
 
         st.success(f"💰 Estimasi Harga Rumah: {round(predict, 2):,} Yuan")
         st.write(f"💸 Estimasi Harga dalam Rupiah (juta): Rp {round(predict * 2.276, 2):,} juta")
-
