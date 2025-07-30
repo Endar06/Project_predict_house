@@ -10,7 +10,7 @@ def house_dashboard():
 
     @st.cache_data
     def load_data():
-        data = pd.read_csv("Bejing.csv", encoding='latin1')
+        data = pd.read_csv("Bejing.csv", encoding='latin1', dtype={"id": str}, low_memory=False)
         return data
 
     data = load_data()
