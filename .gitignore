@@ -1,3 +1,6 @@
 model_rumah.pkl
 *.pyc
 __pycache__/
+model_rumah_2.pkl
+*.pyc
+__pycache__/
