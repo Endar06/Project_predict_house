@@ -1,9 +1,11 @@
+import warnings
+warnings.filterwarnings('ignore')
 import streamlit as st
 
 def tampilkan_kontak():
     st.title("📞 Kontak Saya")
 
-    st.subheader("Silakan hubungi Saya melalui informasi berikut:")
+    st.subheader("Silakan hubungi Saya melalui informasi berikut :")
 
     st.markdown("""
     📍 *Alamat*: Bogor, Jawa Barat

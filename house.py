@@ -9,10 +9,10 @@ import gdown
 from streamlit_option_menu import option_menu
 
 def house_predict():
-    # Cek apakah file model sudah ada, kalau belum download
+
     model_path = 'model_rumah_2.pkl'
     if not os.path.exists(model_path):
-        file_id = "1TyJ_diF7f-OYcibl43esOG2xD_CgsKA9"  # ID dari link baru
+        file_id = "1TyJ_diF7f-OYcibl43esOG2xD_CgsKA9"  
         url = f"https://drive.google.com/uc?id={file_id}"
         st.info("Mengunduh model dari Google Drive...")
         gdown.download(url, model_path, quiet=False)
