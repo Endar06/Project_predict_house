@@ -4,7 +4,7 @@ import plotly.express as px
 
 def house_dashboard():
 
-    st.set_page_config(page_title="Dashboard Properti Beijing", layout="wide")
+    st.set_page_config(page_title="Dashboard Properti Rumah Beijing", layout="wide")
 
     st.title("🏠 Dashboard Interaktif - Properti Beijing")
 
